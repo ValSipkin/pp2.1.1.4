@@ -13,6 +13,7 @@ public class Util {
     public static Connection getConnection() {
         Connection connection = null;
         try {
+            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
